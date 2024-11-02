@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyolwf6k87gct"]
+
+[ext_resource type="Texture2D" uid="uid://cusjpjxg11i76" path="res://sprites/tube-bg.png" id="1_53xkw"]
+[ext_resource type="Script" path="res://ui/tube.gd" id="1_ikj4a"]
+[ext_resource type="Texture2D" uid="uid://grd6lbxapfx6" path="res://sprites/tube-liquid.png" id="2_8i7fm"]
+[ext_resource type="Texture2D" uid="uid://dpsf0tvndq1h3" path="res://sprites/tube-liquid2.png" id="2_wgrfd"]
+[ext_resource type="Texture2D" uid="uid://bawi03202woxl" path="res://sprites/tube-outline.png" id="3_ba3pk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owx4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wgrfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8i7fm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Tube" type="Control"]
+layout_mode = 3
+anchor_left = 0.817708
+anchor_top = 0.0601852
+anchor_right = 0.967882
+anchor_bottom = 0.930556
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ikj4a")
+metadata/_edit_use_anchors_ = true
+
+[node name="Center" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tube-bg" type="Sprite2D" parent="Center"]
+clip_children = 2
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("1_53xkw")
+
+[node name="Tube-liquid" type="AnimatedSprite2D" parent="Center/Tube-bg"]
+position = Vector2(0.78125, 4.6875)
+sprite_frames = SubResource("SpriteFrames_owx4l")
+autoplay = "default"
+frame_progress = 0.418711
+
+[node name="Tube-outline" type="Sprite2D" parent="Center"]
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("3_ba3pk")

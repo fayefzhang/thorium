@@ -33,7 +33,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.203594, 0)
 visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -4.9768e-08, 7.18741e-08, 0, 0.822144, 0.56928, -8.74228e-08, 0.56928, -0.822144, 0.332074, 4.39616, -3.88791)
+transform = Transform3D(0.970761, 0.139474, -0.195372, -0.00326644, 0.821485, 0.57022, 0.240026, -0.552909, 0.797921, 0.332074, 4.39616, 10.9639)
 top_level = true
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_se4vx")]
