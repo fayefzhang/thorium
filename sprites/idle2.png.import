@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clgfbt5xtpqgf"
-path.s3tc="res://.godot/imported/MC.png-b01db1443efabb4f3e12920392f8485e.s3tc.ctex"
+uid="uid://dfrl7fliytbux"
+path.s3tc="res://.godot/imported/idle2.png-4e99c5f59ec132c8c338602eb56a383f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/MC.png"
-dest_files=["res://.godot/imported/MC.png-b01db1443efabb4f3e12920392f8485e.s3tc.ctex"]
+source_file="res://sprites/idle2.png"
+dest_files=["res://.godot/imported/idle2.png-4e99c5f59ec132c8c338602eb56a383f.s3tc.ctex"]
 
 [params]
 
