@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba2mruqdkid8v"]
+[gd_scene load_steps=8 format=3 uid="uid://ba2mruqdkid8v"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main_character.gd" id="1_dt8m4"]
+[ext_resource type="Texture2D" uid="uid://btockdtyyw7uf" path="res://sprites/idle1.png" id="2_d872o"]
 [ext_resource type="Texture2D" uid="uid://diw1arh8i1iw8" path="res://sprites/run_1.png" id="2_xy6yn"]
+[ext_resource type="Texture2D" uid="uid://dfrl7fliytbux" path="res://sprites/idle2.png" id="3_jf876"]
 [ext_resource type="Texture2D" uid="uid://bvuvjr5swvqgv" path="res://sprites/run_2.png" id="3_wo4ud"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1nwvn"]
@@ -11,14 +13,25 @@ radius = 0.25
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_d872o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jf876")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_xy6yn")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_wo4ud")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 5.0
+"name": &"run",
+"speed": 4.0
 }]
 
 [node name="MainCharacter" type="CharacterBody3D"]
@@ -39,4 +52,3 @@ transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_urhlo")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.815171
