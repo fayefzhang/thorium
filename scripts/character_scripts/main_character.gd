@@ -57,5 +57,4 @@ func _physics_process(delta):
 		velocity.x = 0
 		velocity.z = 0
 		$rotateSprite/AnimatedSprite3D.play("idle")
-	print(transform.basis * velocity)
 	move_and_slide()
