@@ -5,6 +5,7 @@ class_name main_character
 @export var character_name:String
 @export var texture:Texture2D
 var cam:Camera3D
+var rotateTime: float = 0.3
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -35,6 +36,13 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	if Input.is_action_just_pressed("left"):
+			var rotateTween: Tween = $rotateSprite.create_tween()
+			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
+	if Input.is_action_just_pressed("right"):
+			var rotateTween: Tween = $rotateSprite.create_tween()
+			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 180, rotateTime)
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED

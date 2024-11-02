@@ -27,14 +27,16 @@ script = ExtResource("1_dt8m4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_1nwvn")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_1nwvn")
+
+[node name="rotateSprite" type="Marker3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="rotateSprite"]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_urhlo")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.815171
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("CapsuleShape3D_1nwvn")
