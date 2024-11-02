@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc26nf150gp82"]
+
+[ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="2_taqrp"]
+[ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_se4vx"]
+[ext_resource type="PackedScene" uid="uid://ddd8ihg30lr2b" path="res://ui/keys.tscn" id="3_uh3r1"]
+
+[sub_resource type="Environment" id="Environment_83dfm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_j8nnl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ke6gm"]
+size = Vector3(5, 0.1, 5)
+
+[node name="Intro" type="Node3D"]
+
+[node name="Keys" parent="." instance=ExtResource("3_uh3r1")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_83dfm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="FloorMesh" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, -0.035022, 0)
+mesh = SubResource("QuadMesh_j8nnl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_ke6gm")
+
+[node name="Classroom" parent="." instance=ExtResource("2_taqrp")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.203594, 0)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -4.9768e-08, 7.18741e-08, 0, 0.822144, 0.56928, -8.74228e-08, 0.56928, -0.822144, 0.332074, 4.39616, -3.88791)
+top_level = true
+
+[node name="MainCharacter" parent="." instance=ExtResource("3_se4vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69884, 1.54238, 0.813499)

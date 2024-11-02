@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddd8ihg30lr2b"]
+
+[ext_resource type="Texture2D" uid="uid://bqfglva2vopyt" path="res://sprites/key.png" id="1_7b48w"]
+[ext_resource type="Script" path="res://ui/keys.gd" id="1_b2rfg"]
+
+[node name="Keys" type="Control"]
+layout_mode = 3
+anchor_right = 1.02431
+anchor_bottom = 0.990741
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2rfg")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0347458
+anchor_top = 0.786604
+anchor_right = 0.476271
+anchor_bottom = 0.962617
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer2"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer3"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer4"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
+
+[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer5"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
+
+[node name="PanelContainer6" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer6"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
+
+[node name="PanelContainer7" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer7"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
+
+[node name="PanelContainer8" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer8"]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("1_7b48w")
