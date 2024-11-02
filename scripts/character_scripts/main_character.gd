@@ -5,7 +5,7 @@ class_name main_character
 @export var character_name:String
 @export var texture:Texture2D
 var rotateTime: float = 0.3
-var isDead: bool = false
+var noInput: bool = false
 
 var facing: int = -1
 var normalKeys: int = 0
@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
-	if isDead:
+	if noInput:
 		return
 	# Add the gravity.
 	if not is_on_floor():
@@ -74,14 +74,21 @@ func _on_interactions_area_exited(area: Area3D) -> void:
 	$interactText.visible = false
 	interactionObject = null
 
-func useKey() -> void:
+func useKey(time: float) -> void:
 	if (normalKeys > 0):
 		normalKeys -= 1
-		$Keys.useKey();
+		$Keys.useKey()
+		var turnKeyTween: Tween = create_tween()
+		noInput = true
+		$rotateSprite/AnimatedSprite3D.play("turn-key")
+		turnKeyTween.tween_callback(finishAnimation).set_delay(time)
 
+func finishAnimation() -> void:
+	noInput = false
+	$rotateSprite/AnimatedSprite3D.play("idle")
 
 func kill() -> void:
 	$Keys.visible = false
 	$GameOver.visible = true
-	isDead = true
+	noInput = true
 	print("PLAYER DIED: GAME OVER")

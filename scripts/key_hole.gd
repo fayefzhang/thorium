@@ -2,7 +2,10 @@ extends Interactable
 
 class_name keyHole
 
-var keyUsed = false
+# whether the key has been used
+var keyUsed: bool = false
+# time needed to use key in seconds
+var useKeyTime: float = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,5 +24,5 @@ func interactText() -> String:
 	return "Use Key"
 
 func interact(character: main_character) -> void:
-	character.useKey()
+	character.useKey(useKeyTime)
 	set_collision_layer_value(2, false)
