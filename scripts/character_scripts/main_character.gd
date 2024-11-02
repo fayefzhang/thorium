@@ -43,11 +43,12 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		if velocity.x > 0 and facing == 1:
+		var localVel = transform.basis * velocity
+		if localVel.x < 0 and facing == 1:
 			var rotateTween: Tween = $rotateSprite.create_tween()
 			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
 			facing = -1
-		if velocity.x < 0 and facing == -1:
+		if localVel.x > 0 and facing == -1:
 			var rotateTween: Tween = $rotateSprite.create_tween()
 			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 180, rotateTime)
 			facing = 1
@@ -56,4 +57,5 @@ func _physics_process(delta):
 		velocity.x = 0
 		velocity.z = 0
 		$rotateSprite/AnimatedSprite3D.play("idle")
+	print(transform.basis * velocity)
 	move_and_slide()
