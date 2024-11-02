@@ -7,6 +7,8 @@ class_name main_character
 var cam:Camera3D
 var rotateTime: float = 0.3
 
+var facing: int = -1;
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -37,17 +39,22 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if Input.is_action_just_pressed("left"):
-			var rotateTween: Tween = $rotateSprite.create_tween()
-			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
-	if Input.is_action_just_pressed("right"):
-			var rotateTween: Tween = $rotateSprite.create_tween()
-			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 180, rotateTime)
+
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if velocity.x > 0 and facing == 1:
+			var rotateTween: Tween = $rotateSprite.create_tween()
+			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
+			facing = -1
+		if velocity.x < 0 and facing == -1:
+			var rotateTween: Tween = $rotateSprite.create_tween()
+			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 180, rotateTime)
+			facing = 1
+		$rotateSprite/AnimatedSprite3D.play("run")
 	else:
 		velocity.x = 0
 		velocity.z = 0
+		$rotateSprite/AnimatedSprite3D.play("idle")
 
 	move_and_slide()

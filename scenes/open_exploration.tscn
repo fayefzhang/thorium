@@ -39,4 +39,4 @@ transform = Transform3D(-1, -4.9768e-08, 7.18741e-08, 0, 0.822144, 0.56928, -8.7
 top_level = true
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_x1umk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69884, 1.54238, 0.813499)
+transform = Transform3D(0.987306, 0, -0.158831, 0, 1, 0, 0.158831, 0, 0.987306, 1.69884, 1.54238, 0.813499)

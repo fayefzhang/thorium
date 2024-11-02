@@ -8,6 +8,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1nwvn"]
 radius = 0.25
+height = 1.16515
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_urhlo"]
 animations = [{
@@ -37,12 +38,7 @@ animations = [{
 [node name="MainCharacter" type="CharacterBody3D"]
 script = ExtResource("1_dt8m4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_1nwvn")
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="physicsInteraction" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_1nwvn")
 
 [node name="rotateSprite" type="Marker3D" parent="."]
@@ -50,5 +46,5 @@ shape = SubResource("CapsuleShape3D_1nwvn")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="rotateSprite"]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_urhlo")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
