@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
-class_name Character
+class_name main_character
 
 @export var character_name:String
 @export var texture:Texture2D
+var cam:Camera3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
