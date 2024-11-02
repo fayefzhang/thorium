@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba2mruqdkid8v"]
+[gd_scene load_steps=13 format=3 uid="uid://ba2mruqdkid8v"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main_character.gd" id="1_dt8m4"]
 [ext_resource type="Texture2D" uid="uid://btockdtyyw7uf" path="res://sprites/idle1.png" id="2_d872o"]
+[ext_resource type="Texture2D" uid="uid://daro5rlfvg1qx" path="res://sprites/climb_1.png" id="2_jglu6"]
 [ext_resource type="Texture2D" uid="uid://diw1arh8i1iw8" path="res://sprites/run_1.png" id="2_xy6yn"]
+[ext_resource type="Texture2D" uid="uid://rei24ph87ae7" path="res://sprites/climb_2.png" id="3_dl528"]
 [ext_resource type="Texture2D" uid="uid://dfrl7fliytbux" path="res://sprites/idle2.png" id="3_jf876"]
 [ext_resource type="Texture2D" uid="uid://bvuvjr5swvqgv" path="res://sprites/run_2.png" id="3_wo4ud"]
 [ext_resource type="PackedScene" uid="uid://ddd8ihg30lr2b" path="res://ui/keys.tscn" id="6_24kit"]
+[ext_resource type="Texture2D" uid="uid://0rsrm856e3do" path="res://sprites/turn_1.png" id="8_ljwl6"]
+[ext_resource type="Texture2D" uid="uid://cjol0kd5xhyc8" path="res://sprites/turn_2.png" id="9_iipbr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1nwvn"]
 radius = 0.25
@@ -13,6 +17,17 @@ height = 1.16515
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_urhlo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jglu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dl528")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_d872o")
@@ -34,6 +49,17 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ljwl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iipbr")
+}],
+"loop": true,
+"name": &"turn-key",
+"speed": 5.0
 }]
 
 [node name="MainCharacter" type="CharacterBody3D"]
@@ -47,7 +73,7 @@ shape = SubResource("CapsuleShape3D_1nwvn")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="rotateSprite"]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_urhlo")
-animation = &"run"
+animation = &"turn-key"
 autoplay = "idle"
 
 [node name="Interactions" type="Area3D" parent="."]
