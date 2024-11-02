@@ -4,13 +4,14 @@ class_name main_character
 
 @export var character_name:String
 @export var texture:Texture2D
-var cam:Camera3D
 var rotateTime: float = 0.3
 
-var facing: int = -1;
+var facing: int = -1
+var normalKeys: int = 8
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var interactionObject: Interactable = null
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,7 +24,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -55,5 +55,22 @@ func _physics_process(delta):
 		velocity.x = 0
 		velocity.z = 0
 		$rotateSprite/AnimatedSprite3D.play("idle")
-	print(velocity * transform.basis)
+	
+	if Input.is_action_just_pressed("interact") and interactionObject != null:
+		interactionObject.interact(self)
 	move_and_slide()
+
+func _on_interactions_area_entered(area: Area3D) -> void:
+	if area is Interactable and area.canInteract(self):
+		$interactText.visible = true
+		$interactText.text = area.interactText()
+		interactionObject = area
+
+func _on_interactions_area_exited(area: Area3D) -> void:
+	$interactText.visible = false
+	interactionObject = null
+
+func useKey() -> void:
+	if (normalKeys > 0):
+		normalKeys -= 1
+		$Keys.useKey();

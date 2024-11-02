@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dep6lfycw6b38"]
+
+[ext_resource type="PackedScene" uid="uid://c5wfclyhh0q0y" path="res://scenes/interactable.tscn" id="1_eptr3"]
+[ext_resource type="Script" path="res://scripts/key_hole.gd" id="2_ybi5n"]
+
+[node name="KeyHole" type="Node3D"]
+
+[node name="Interactable" parent="." instance=ExtResource("1_eptr3")]
+script = ExtResource("2_ybi5n")
