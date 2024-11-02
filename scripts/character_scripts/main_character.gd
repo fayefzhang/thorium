@@ -7,7 +7,7 @@ class_name main_character
 var rotateTime: float = 0.3
 
 var facing: int = -1
-var normalKeys: int = 8
+var normalKeys: int = 0
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -19,7 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	normalKeys = $Keys.numKeys
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
@@ -74,3 +74,7 @@ func useKey() -> void:
 	if (normalKeys > 0):
 		normalKeys -= 1
 		$Keys.useKey();
+		
+func kill() -> void:
+	# TODO: PLACEHOLDER => FINISH KILL FUNCTION
+	print("PLAYER DIED: GAME OVER")
