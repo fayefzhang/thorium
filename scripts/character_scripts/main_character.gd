@@ -18,9 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cam = get_viewport().get_camera_3d()
-	look_at(Vector3(cam.global_position.x, global_position.y, cam.global_position.z),Vector3.UP,true)
-
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
@@ -43,7 +41,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		var localVel = transform.basis * velocity
+		var localVel = velocity * transform.basis
 		if localVel.x < 0 and facing == 1:
 			var rotateTween: Tween = $rotateSprite.create_tween()
 			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
@@ -57,4 +55,5 @@ func _physics_process(delta):
 		velocity.x = 0
 		velocity.z = 0
 		$rotateSprite/AnimatedSprite3D.play("idle")
+	print(velocity * transform.basis)
 	move_and_slide()
