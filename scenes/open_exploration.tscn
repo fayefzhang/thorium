@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct7cdinjkwtg7"]
+[gd_scene load_steps=8 format=3 uid="uid://ct7cdinjkwtg7"]
 
 [ext_resource type="Texture2D" uid="uid://brnkj70owa7vn" path="res://icon.svg" id="1_5kcvp"]
+[ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_x1umk"]
 [ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="8_7yx7i"]
 
 [sub_resource type="Environment" id="Environment_sv1ol"]
@@ -36,3 +37,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.203594, 0)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, -4.9768e-08, 7.18741e-08, 0, 0.822144, 0.56928, -8.74228e-08, 0.56928, -0.822144, 0.332074, 4.39616, -3.88791)
 top_level = true
+
+[node name="MainCharacter" parent="." instance=ExtResource("3_x1umk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69884, 1.54238, 0.813499)
