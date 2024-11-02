@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://ct7cdinjkwtg7"]
+
+[ext_resource type="Texture2D" uid="uid://brnkj70owa7vn" path="res://icon.svg" id="1_5kcvp"]
+[ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="5_3vnws"]
+[ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="8_7yx7i"]
+
+[sub_resource type="Environment" id="Environment_sv1ol"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pjigo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk8xn"]
+albedo_texture = ExtResource("1_5kcvp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3npb"]
+size = Vector3(5, 0.1, 5)
+
+[node name="OpenExploration" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.395833, 0.300948, -0.0048871)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sv1ol")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="FloorMesh" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_pjigo")
+surface_material_override/0 = SubResource("StandardMaterial3D_lk8xn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_c3npb")
+
+[node name="MainCharacter" parent="." instance=ExtResource("5_3vnws")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365727, 1.19794, -1.64956)
+script = null
+
+[node name="Camera3D" type="Camera3D" parent="MainCharacter"]
+transform = Transform3D(-0.709583, 0.401501, -0.579041, 3.48767e-16, 0.821776, 0.569811, 0.704622, 0.404328, -0.583118, -2.43177, 3.18186, -3.40877)
+top_level = true
+
+[node name="Classroom" parent="." instance=ExtResource("8_7yx7i")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.203594, 0)
