@@ -29,7 +29,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")
 
@@ -38,7 +38,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer2"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer2"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")
 
@@ -47,7 +47,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer3"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer3"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")
 
@@ -56,7 +56,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer4"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer4"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")
 
@@ -65,7 +65,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer5"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer5"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")
 
@@ -74,7 +74,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer6"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer6"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")
 
@@ -83,7 +83,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer7"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer7"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")
 
@@ -92,6 +92,6 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Item" type="Sprite2D" parent="HBoxContainer/PanelContainer8"]
+[node name="Key" type="Sprite2D" parent="HBoxContainer/PanelContainer8"]
 scale = Vector2(0.305, 0.305)
 texture = ExtResource("1_7b48w")

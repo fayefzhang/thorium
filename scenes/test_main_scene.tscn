@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://qi6vdk3pfckg"]
+
+[ext_resource type="PackedScene" uid="uid://cbj2q14dkv150" path="res://scenes/goop.tscn" id="1_6okmp"]
+[ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="2_1camf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kp0lr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fdj4x"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="Goop" parent="." instance=ExtResource("1_6okmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270057, 0, 0.00412583)
+
+[node name="MainCharacter" parent="." instance=ExtResource("2_1camf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445558, 3.01529, 2.53008)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.741812, 0.670608, 0, -0.670608, 0.741812, -0.160823, 5.73387, 5.81389)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445558, 3.01529, 2.53008)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.41894, -0.122274)
+shape = SubResource("BoxShape3D_kp0lr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0126846, -1.43675, -0.130569)
+mesh = SubResource("BoxMesh_fdj4x")

@@ -64,5 +64,29 @@ text = "Use Key (K)"
 
 [node name="Keys" parent="." instance=ExtResource("6_24kit")]
 
+[node name="GameOver" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.051971, 0.051971, 0.051971, 0.592157)
+
+[node name="Label" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.69246, 4.04298e-06, 1.92523e-07, 1)
+text = "YOU DIED"
+
 [connection signal="area_entered" from="Interactions" to="." method="_on_interactions_area_entered"]
 [connection signal="area_exited" from="Interactions" to="." method="_on_interactions_area_exited"]
