@@ -79,14 +79,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.051971, 0.051971, 0.051971, 0.592157)
+color = Color(0.0509804, 0.0509804, 0.0509804, 0.705882)
 
-[node name="Label" type="Label" parent="GameOver"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="GameOverText" type="Label" parent="GameOver"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.69246, 4.04298e-06, 1.92523e-07, 1)
+theme_override_font_sizes/font_size = 100
 text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="GameOver"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0338533, 0.0338533, 0.0338533, 0.854902)
 
 [connection signal="area_entered" from="Interactions" to="." method="_on_interactions_area_entered"]
 [connection signal="area_exited" from="Interactions" to="." method="_on_interactions_area_exited"]

@@ -5,6 +5,7 @@ class_name main_character
 @export var character_name:String
 @export var texture:Texture2D
 var rotateTime: float = 0.3
+var isDead: bool = false
 
 var facing: int = -1
 var normalKeys: int = 0
@@ -20,10 +21,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	normalKeys = $Keys.numKeys
+	$GameOver.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
 func _physics_process(delta):
+	if isDead:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -74,7 +78,10 @@ func useKey() -> void:
 	if (normalKeys > 0):
 		normalKeys -= 1
 		$Keys.useKey();
-		
+
+
 func kill() -> void:
-	# TODO: PLACEHOLDER => FINISH KILL FUNCTION
+	$Keys.visible = false
+	$GameOver.visible = true
+	isDead = true
 	print("PLAYER DIED: GAME OVER")

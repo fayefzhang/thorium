@@ -5,6 +5,7 @@ var riseRate: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	rise(3)
 	pass # Replace with function body.
 
 
@@ -27,4 +28,5 @@ func start() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is main_character:
 		body.kill()
+		pause()
 	pass # Replace with function body.
