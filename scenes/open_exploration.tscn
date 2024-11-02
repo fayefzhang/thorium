@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct7cdinjkwtg7"]
+[gd_scene load_steps=7 format=3 uid="uid://ct7cdinjkwtg7"]
 
 [ext_resource type="Texture2D" uid="uid://brnkj70owa7vn" path="res://icon.svg" id="1_5kcvp"]
-[ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="5_3vnws"]
 [ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="8_7yx7i"]
 
 [sub_resource type="Environment" id="Environment_sv1ol"]
@@ -31,12 +30,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lk8xn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_c3npb")
 
-[node name="MainCharacter" parent="." instance=ExtResource("5_3vnws")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609926, 1.28096, -1.46413)
-
-[node name="Camera3D" type="Camera3D" parent="MainCharacter"]
-transform = Transform3D(-1, -4.9768e-08, 7.18741e-08, 0, 0.822144, 0.56928, -8.74228e-08, 0.56928, -0.822144, -1.03382, 3.182, -3.409)
-top_level = true
-
 [node name="Classroom" parent="." instance=ExtResource("8_7yx7i")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.203594, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -4.9768e-08, 7.18741e-08, 0, 0.822144, 0.56928, -8.74228e-08, 0.56928, -0.822144, 0.332074, 4.39616, -3.88791)
+top_level = true
