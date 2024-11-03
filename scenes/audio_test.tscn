@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dna1lkeglk04a"]
+[gd_scene load_steps=21 format=3 uid="uid://dna1lkeglk04a"]
 
 [ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_6j3v4"]
 [ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="2_cfhjb"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://scenes/first_to_second.gd" id="8_ilgmi"]
 [ext_resource type="Script" path="res://scenes/fifth_to_eighth.gd" id="9_hs3sd"]
 [ext_resource type="Script" path="res://scenes/start_to_first_and_eighth_to_end.gd" id="10_5i204"]
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="12_8jn2u"]
+[ext_resource type="AudioStream" uid="uid://63rs8d087bwk" path="res://Audio/The_Dawning_of_a_New_Day_Metal_Pipe.mp3" id="12_a046l"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2wxix"]
 stream_count = 2
@@ -60,6 +62,10 @@ script = ExtResource("9_hs3sd")
 [node name="first_to_second" type="AudioStreamPlayer" parent="MainCharacter"]
 stream = ExtResource("5_61u65")
 script = ExtResource("8_ilgmi")
+
+[node name="game_over" type="AudioStreamPlayer" parent="MainCharacter"]
+stream = ExtResource("12_a046l")
+script = ExtResource("12_8jn2u")
 
 [node name="Start_to_first_and_eighth_to_end" type="AudioStreamPlayer" parent="MainCharacter"]
 stream = ExtResource("5_1xqhd")

@@ -22,6 +22,8 @@ func _process(delta: float) -> void:
 	if (keys == -2):
 		keys_before = $"../".normalKeys
 		stop()
+	if ($"../GameOver".visible):
+		stop()
 	var strings = clamp(((mc.position.y - goop.position.y) - lower_bound)/(upper_bound - lower_bound), 0, 1)
 	var rock = 1.0 - strings
 	#print(mc.position.y - goop.position.y)
