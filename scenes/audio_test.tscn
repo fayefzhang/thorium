@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dna1lkeglk04a"]
+
+[ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_6j3v4"]
+[ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="2_cfhjb"]
+[ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_p0ymx"]
+[ext_resource type="PackedScene" uid="uid://dp4tmuufa1kam" path="res://scenes/level1.tscn" id="4_vqk7e"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Tube" parent="." instance=ExtResource("1_6j3v4")]
+z_index = -1
+anchor_right = 0.817708
+anchor_bottom = 0.0601852
+offset_left = 79.0
+offset_top = 295.0
+offset_right = 79.0
+offset_bottom = 295.0
+
+[node name="Goop" parent="." instance=ExtResource("2_cfhjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270057, -12.7394, 0.00412583)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Goop"]
+transform = Transform3D(1, 0, 0, 0, -0.00844735, 0.999964, 0, -0.999964, -0.00844735, 0, 6.62416, 0)
+
+[node name="MainCharacter" parent="." instance=ExtResource("3_p0ymx")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -1.80559, 3.03191, 1.34413)
+
+[node name="Camera3D" type="Camera3D" parent="MainCharacter"]
+transform = Transform3D(6.66667, 0, 0, 0, 6.14593, 2.58301, 0, -2.58301, 6.14593, 0.239402, 2.26087, 4.83361)
+
+[node name="Level1" parent="." instance=ExtResource("4_vqk7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.2244, 0)
+
+[connection signal="ready" from="Tube" to="Tube" method="_on_ready"]
+[connection signal="ready" from="Goop" to="Tube" method="_on_goop_ready"]
