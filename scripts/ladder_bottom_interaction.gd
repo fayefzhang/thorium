@@ -19,6 +19,6 @@ func interactText(character: main_character) -> String:
 	return "ERROR"
 
 func interact(character: main_character) -> void:
-	if character.is_on_floor() and !character.isClimbing:
-		
-		character.startClimb()
+	var zOffset: float =  to_global(Vector3(0,0, -$CollisionShape3D.shape.get_size().z/2)).z
+	character.clampToLadderXZDirs(position.x, zOffset)
+	character.startClimb((zOffset / abs(zOffset)) * $CollisionShape3D.shape.get_size().z/2)
