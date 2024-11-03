@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://s6hp6w8lvbbs"]
+
+[ext_resource type="Shader" path="res://shaders/postprocess.gdshader" id="1_noclx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bm2lr"]
+shader = ExtResource("1_noclx")
+shader_parameter/iTime = null
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_bm2lr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
