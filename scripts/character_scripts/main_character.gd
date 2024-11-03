@@ -18,6 +18,7 @@ var hasBigKey = false
 #animation names
 var walkAnimation: String = "run"
 var climbAnimation: String = "climb"
+var turnKeyAnimation: String = "turn-key"
 
 var facing: int = -1
 var normalKeys: int = 0
@@ -68,7 +69,6 @@ func _physics_process(delta):
 
 			$rotateSprite/AnimatedSprite3D.play()
 			velocity.y = -(yMovement / abs(yMovement)) * CLIMB_SPEED
-		print(interactionObject)
 		if Input.is_action_just_pressed("interact") and interactionObject != null:
 			interactionObject.interact(self)
 		move_and_slide()
@@ -183,5 +183,4 @@ func climbingTweenHelper(climbTween: Tween):
 
 func clampToLadderXZDirs(pos: Vector3):
 	pos.y = position.y
-	print(pos)
 	create_tween().tween_property(self, "position", pos, rotateTime)
