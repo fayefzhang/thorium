@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	if (keys == 7):
 		keys_before = $"../".normalKeys
 		stop()
-	if ((keys == 3) && !has_stream_playback()):
+	if ((keys == 0) && !has_stream_playback()):
 		play()
 	if (keys == -1):
 		stop()
