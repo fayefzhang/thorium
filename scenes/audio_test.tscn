@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dna1lkeglk04a"]
+[gd_scene load_steps=13 format=3 uid="uid://dna1lkeglk04a"]
 
 [ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_6j3v4"]
 [ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="2_cfhjb"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bawico5sil23l" path="res://Audio/Planet_in_the_Sky_minor.mp3" id="5_qfvme"]
 [ext_resource type="AudioStream" uid="uid://cfljb1lwcmkel" path="res://Audio/Viola_Concerto_in_D_Minor_rock.mp3" id="6_20y7y"]
 [ext_resource type="AudioStream" uid="uid://dva4g656y0ui8" path="res://Audio/Incentive_225.ogg" id="6_ys41k"]
+[ext_resource type="AudioStream" uid="uid://bnsqxl074gpni" path="res://Audio/Unstable_Pillars_2.mp3" id="7_38a0a"]
 [ext_resource type="AudioStream" uid="uid://cpdxhqdguapc" path="res://Audio/Incentive_Rock.ogg" id="7_wmhs4"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2wxix"]
@@ -49,6 +50,9 @@ stream = ExtResource("5_qfvme")
 
 [node name="Second_to_fourth" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_20y7y")
+
+[node name="fifth_to_eighth" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_38a0a")
 
 [node name="Start_to_first_and_eighth_to_end" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1xqhd")
