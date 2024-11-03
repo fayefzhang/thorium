@@ -17,5 +17,10 @@ func interactText(character: main_character) -> String:
 	return "Grab BIG KEY"
 
 func interact(character: main_character) -> void:
-	character.walkAnimation = "run-key"
-	character.climbAnimation = "climb-key"
+	character.walkAnimation = "run_key"
+	character.climbAnimation = "climb_key"
+	character.turnKeyAnimation = "turn-key_key"
+	character.hasBigKey = true
+	set_collision_layer_value(2, false)
+	set_collision_mask_value(2, false)
+	$Sprite3D.visible = false
