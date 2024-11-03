@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddd8ihg30lr2b"]
 
-[ext_resource type="Texture2D" uid="uid://bqfglva2vopyt" path="res://sprites/key.png" id="1_7b48w"]
+[ext_resource type="Texture2D" uid="uid://bhqx6buytiywl" path="res://sprites/key.png" id="1_7b48w"]
 [ext_resource type="Script" path="res://ui/keys.gd" id="1_b2rfg"]
 
 [node name="Keys" type="Control"]
