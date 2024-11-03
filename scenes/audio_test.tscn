@@ -6,14 +6,14 @@
 [ext_resource type="PackedScene" path="res://scenes/level1.tscn" id="4_vqk7e"]
 [ext_resource type="AudioStream" uid="uid://dwj7grnrapbtv" path="res://Audio/Unstable_Pillars.mp3" id="5_elt8m"]
 [ext_resource type="Script" path="res://scenes/audio_stream_player.gd" id="5_hlbt4"]
-[ext_resource type="AudioStream" uid="uid://bh7bwcvknyo2e" path="res://Audio/Incentive_225.wav" id="6_33hru"]
-[ext_resource type="AudioStream" uid="uid://dm1ifm0wg4nbo" path="res://Audio/Incentive_Rock.wav" id="7_1b6xe"]
+[ext_resource type="AudioStream" uid="uid://dva4g656y0ui8" path="res://Audio/Incentive_225.ogg" id="6_ys41k"]
+[ext_resource type="AudioStream" uid="uid://cpdxhqdguapc" path="res://Audio/Incentive_Rock.ogg" id="7_wmhs4"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2wxix"]
 stream_count = 2
-stream_0/stream = ExtResource("6_33hru")
+stream_0/stream = ExtResource("6_ys41k")
 stream_0/volume = 0.0
-stream_1/stream = ExtResource("7_1b6xe")
+stream_1/stream = ExtResource("7_wmhs4")
 stream_1/volume = 0.0
 
 [node name="Main" type="Node3D"]
