@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dna1lkeglk04a"]
+[gd_scene load_steps=14 format=3 uid="uid://dna1lkeglk04a"]
 
 [ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_6j3v4"]
 [ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="2_cfhjb"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_p0ymx"]
 [ext_resource type="PackedScene" path="res://scenes/level1.tscn" id="4_vqk7e"]
 [ext_resource type="AudioStream" uid="uid://bani8b8c1iq14" path="res://Audio/Underneath_the_Starlit_Sky_minor.mp3" id="5_1xqhd"]
+[ext_resource type="AudioStream" uid="uid://bxqxd3q8ul4fs" path="res://Audio/For the Past Rock.mp3" id="5_61u65"]
 [ext_resource type="Script" path="res://scenes/audio_stream_player.gd" id="5_hlbt4"]
 [ext_resource type="AudioStream" uid="uid://bawico5sil23l" path="res://Audio/Planet_in_the_Sky_minor.mp3" id="5_qfvme"]
 [ext_resource type="AudioStream" uid="uid://cfljb1lwcmkel" path="res://Audio/Viola_Concerto_in_D_Minor_rock.mp3" id="6_20y7y"]
@@ -53,6 +54,9 @@ stream = ExtResource("6_20y7y")
 
 [node name="fifth_to_eighth" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_38a0a")
+
+[node name="first_to_second" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_61u65")
 
 [node name="Start_to_first_and_eighth_to_end" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1xqhd")
