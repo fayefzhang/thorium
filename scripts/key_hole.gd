@@ -26,3 +26,7 @@ func interactText(character: main_character) -> String:
 func interact(character: main_character) -> void:
 	character.useKey(useKeyTime)
 	set_collision_layer_value(2, false)
+	
+	# FUCK MY LIFE
+	$"../../../../../Goop".lower(7, 2)
+	

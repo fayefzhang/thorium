@@ -111,6 +111,7 @@ func useKey(time: float) -> void:
 	if (normalKeys > 0):
 		normalKeys -= 1
 		$Keys.useKey()
+		$use_key.play()
 		var turnKeyTween: Tween = create_tween()
 		noInput = true
 		$rotateSprite/AnimatedSprite3D.play("turn-key")
