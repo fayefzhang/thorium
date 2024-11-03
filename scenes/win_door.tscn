@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dha72rpe1n1f6"]
+[gd_scene load_steps=4 format=3 uid="uid://dha72rpe1n1f6"]
 
 [ext_resource type="Script" path="res://scenes/windoor.gd" id="1_v3bss"]
+[ext_resource type="Texture2D" uid="uid://cl8ckgpt8oqbn" path="res://sprites/exit-door.png" id="2_mxsco"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mmth4"]
-size = Vector3(1, 1.44751, 1)
+size = Vector3(6.8443, 10.0782, 1)
 
 [node name="WinDoor" type="Node3D"]
 
@@ -13,5 +14,8 @@ collision_mask = 2
 script = ExtResource("1_v3bss")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734009, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240082, -0.00923157, 0)
 shape = SubResource("BoxShape3D_mmth4")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+texture = ExtResource("2_mxsco")
