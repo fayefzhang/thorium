@@ -7,6 +7,11 @@ class_name main_character
 var rotateTime: float = 0.3
 var noInput: bool = false
 
+# climbing vars
+var isClimbing: bool = false
+var canContinueClimbingUp: bool = true
+const CLIMB_SPEED: float = 5.0
+
 var facing: int = -1
 var normalKeys: int = 0
 
@@ -26,12 +31,25 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	velocity.x = 0
+	velocity.z = 0
+	
 	if noInput:
 		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+	
+	if isClimbing:
+		velocity.y = 0
+		var yMovement: = Input.get_vector("left", "right", "up", "down").y
+		if yMovement == 0:
+			$rotateSprite/AnimatedSprite3D.pause()
+		elif canContinueClimbingUp or yMovement < 0:
+			$rotateSprite/AnimatedSprite3D.play()
+			velocity.y = -(yMovement / abs(yMovement)) * CLIMB_SPEED
+		move_and_slide()
+		return
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -56,8 +74,6 @@ func _physics_process(delta):
 			facing = 1
 		$rotateSprite/AnimatedSprite3D.play("run")
 	else:
-		velocity.x = 0
-		velocity.z = 0
 		$rotateSprite/AnimatedSprite3D.play("idle")
 	
 	if Input.is_action_just_pressed("interact") and interactionObject != null:
@@ -92,3 +108,9 @@ func kill() -> void:
 	$GameOver.visible = true
 	noInput = true
 	print("PLAYER DIED: GAME OVER")
+
+func startClimb() -> void:
+	isClimbing = true
+	canContinueClimbingUp = true
+	$rotateSprite/AnimatedSprite3D.play("climb")
+	$rotateSprite/AnimatedSprite3D.pause()
