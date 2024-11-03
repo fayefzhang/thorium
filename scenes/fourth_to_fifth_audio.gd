@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	keys = $"../".normalKeys
-	print(keys)
+	#print(keys)
 	if ((keys == 4) && !has_stream_playback()):
 		keys_before = $"../".normalKeys
 		play()
