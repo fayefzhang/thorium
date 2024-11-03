@@ -184,3 +184,9 @@ func climbingTweenHelper(climbTween: Tween):
 func clampToLadderXZDirs(pos: Vector3):
 	pos.y = position.y
 	create_tween().tween_property(self, "position", pos, rotateTime)
+
+
+
+func _on_button_button_down() -> void:
+	get_tree().reload_current_scene()
+	pass # Replace with function body.
