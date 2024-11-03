@@ -64,3 +64,4 @@ interact={
 [layer_names]
 
 3d_physics/layer_2="interactionLayer"
+3d_physics/layer_3="LadderCeiling"
