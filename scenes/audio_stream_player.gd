@@ -3,8 +3,8 @@ extends AudioStreamPlayer
 var lower_bound = 5.0
 var upper_bound = 10.0
 
-@onready var mc = $"../MainCharacter"
-@onready var goop = $"../Goop"
+@onready var mc = $"../"
+@onready var goop = $"../../Goop"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
