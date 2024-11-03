@@ -11,7 +11,7 @@ var noInput: bool = false
 var isClimbing: bool = false
 var canContinueClimbingUp: bool = true
 const CLIMB_SPEED: float = 5.0
-var zOffset: float
+var zOffset: Vector3
 
 var facing: int = -1
 var normalKeys: int = 0
@@ -53,6 +53,7 @@ func _physics_process(delta):
 			$interactText.text = "Get Down"
 			if Input.is_action_just_pressed("interact"):
 				endClimbBottom()
+				return
 		else:
 			$interactText.visible = false
 		if yMovement == 0: # pause animation when still
@@ -61,6 +62,9 @@ func _physics_process(delta):
 
 			$rotateSprite/AnimatedSprite3D.play()
 			velocity.y = -(yMovement / abs(yMovement)) * CLIMB_SPEED
+		print(interactionObject)
+		if Input.is_action_just_pressed("interact") and interactionObject != null:
+			interactionObject.interact(self)
 		move_and_slide()
 		return
 	# Handle jump.
@@ -122,7 +126,7 @@ func kill() -> void:
 	noInput = true
 	print("PLAYER DIED: GAME OVER")
 
-func startClimb(offsetZ: float) -> void:
+func startClimb(offsetZ: Vector3) -> void:
 	set_collision_layer_value(3, true)
 	set_collision_mask_value(3, true)
 	isClimbing = true
@@ -145,7 +149,8 @@ func endClimbBottom() -> void:
 	# TODO: fix bug where you have to leave and come back to be able to climb again
 	$interactText.visible = false
 	noInput = true
-	create_tween().tween_property(self, "position:z", position.z - zOffset, rotateTime)
+	zOffset.y = position.y
+	create_tween().tween_property(self, "position", zOffset, rotateTime)
 	var climbTween: Tween = create_tween()
 	climbingTweenHelper(climbTween)
 	climbTween.tween_callback(func():
@@ -153,10 +158,13 @@ func endClimbBottom() -> void:
 		noInput = false
 	)
 
-func endClimbTop(posX: float, posY: float) -> void:
+func endClimbTop(posXZ: Vector3, posY: float) -> void:
 	set_collision_layer_value(3, false)
-	
-
+	isClimbing = false
+	var climbToTopTween = create_tween()
+	climbToTopTween.tween_property(self, "position:y", posY + $Interactions/interactionCollider.shape.height/2, rotateTime)
+	climbToTopTween.tween_callback(func(): climbingTweenHelper(climbToTopTween))
+	climbToTopTween.tween_callback(func(): clampToLadderXZDirs(posXZ))
 
 func climbingTweenHelper(climbTween: Tween):
 	if facing == -1:
@@ -166,7 +174,7 @@ func climbingTweenHelper(climbTween: Tween):
 		climbTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
 		facing = -1
 
-func clampToLadderXZDirs(posX: float, posZ: float):
-	if is_on_floor() and !isClimbing:
-		create_tween().tween_property(self, "position:x", posX, rotateTime)
-		create_tween().tween_property(self, "position:z", posZ, rotateTime)
+func clampToLadderXZDirs(pos: Vector3):
+	pos.y = position.y
+	print(pos)
+	create_tween().tween_property(self, "position", pos, rotateTime)

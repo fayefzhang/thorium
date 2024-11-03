@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func canInteract(character: main_character) -> bool:
-	return character.is_on_floor() and !character.isClimbing
+	return character.isClimbing
 
 func interactText(character: main_character) -> String:
 	if character.isClimbing:
@@ -20,4 +20,4 @@ func interactText(character: main_character) -> String:
 
 func interact(character: main_character) -> void:
 	if character.isClimbing:
-		character.endClimbTop()
+		character.endClimbTop($Marker3D.global_position, $Marker3D.global_position.y)
