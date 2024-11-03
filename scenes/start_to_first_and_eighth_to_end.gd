@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	keys = $"../".normalKeys
-	print(keys)
+	#print(keys)
 	if (keys == 7):
 		keys_before = $"../".normalKeys
 		stop()
