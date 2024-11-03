@@ -163,7 +163,7 @@ func endClimbTop(posXZ: Vector3, posY: float) -> void:
 	isClimbing = false
 	var climbToTopTween = create_tween()
 	climbToTopTween.tween_property(self, "position:y", posY + $Interactions/interactionCollider.shape.height/2, rotateTime)
-	climbToTopTween.tween_callback(func(): climbingTweenHelper(climbToTopTween))
+	climbToTopTween.tween_callback(func(): climbingTweenHelper(create_tween()))
 	climbToTopTween.tween_callback(func(): clampToLadderXZDirs(posXZ))
 
 func climbingTweenHelper(climbTween: Tween):
