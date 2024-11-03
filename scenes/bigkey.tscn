@@ -17,6 +17,6 @@ script = ExtResource("1_1yw7d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362183, 0.620056, 0.00946045)
 shape = SubResource("BoxShape3D_l5siw")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.737469, -4.91841, 0)
 texture = ExtResource("2_4gfbu")
