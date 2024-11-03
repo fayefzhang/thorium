@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ov1kys4o0v2"]
+
+[ext_resource type="PackedScene" uid="uid://bx5mx8k84fwq2" path="res://scenes/ladder_top.tscn" id="1_xwyq6"]
+[ext_resource type="PackedScene" uid="uid://cdhbgse37l8c1" path="res://scenes/ladder_bottom.tscn" id="2_gqh35"]
+
+[node name="FullLadder" type="Node3D"]
+
+[node name="ladderTop" parent="." instance=ExtResource("1_xwyq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03907, 0.260025)
+
+[node name="LadderBottom" parent="." instance=ExtResource("2_gqh35")]
