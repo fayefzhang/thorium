@@ -17,4 +17,4 @@ func interactText(character: main_character) -> String:
 	return "Leave"
 
 func interact(character: main_character) -> void:
-	character.
+	character.win()
