@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct7cdinjkwtg7"]
+[gd_scene load_steps=10 format=3 uid="uid://ct7cdinjkwtg7"]
 
 [ext_resource type="Texture2D" uid="uid://brnkj70owa7vn" path="res://icon.svg" id="1_5kcvp"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_x1umk"]
 [ext_resource type="PackedScene" uid="uid://dep6lfycw6b38" path="res://scenes/key_hole.tscn" id="4_wpf6j"]
+[ext_resource type="PackedScene" uid="uid://d2epeasikvd3t" path="res://scenes/gear.tscn" id="5_6whhk"]
 [ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="8_7yx7i"]
 
 [sub_resource type="Environment" id="Environment_sv1ol"]
@@ -44,3 +45,6 @@ transform = Transform3D(-0.995265, 0, 0.0972016, 0, 1, 0, -0.0972016, 0, -0.9952
 
 [node name="KeyHole" parent="." instance=ExtResource("4_wpf6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57461, 0.90261, 0.248896)
+
+[node name="Gear" parent="." instance=ExtResource("5_6whhk")]
+transform = Transform3D(15.8843, 0, 0, 0, 15.8843, 0, 0, 0, 15.8843, 5.99988, 0.25, 0.913115)
