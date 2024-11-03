@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba2mruqdkid8v"]
+[gd_scene load_steps=19 format=3 uid="uid://ba2mruqdkid8v"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main_character.gd" id="1_dt8m4"]
 [ext_resource type="Texture2D" uid="uid://btockdtyyw7uf" path="res://sprites/idle1.png" id="2_d872o"]
@@ -7,9 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://rei24ph87ae7" path="res://sprites/climb_2.png" id="3_dl528"]
 [ext_resource type="Texture2D" uid="uid://dfrl7fliytbux" path="res://sprites/idle2.png" id="3_jf876"]
 [ext_resource type="Texture2D" uid="uid://bvuvjr5swvqgv" path="res://sprites/run_2.png" id="3_wo4ud"]
+[ext_resource type="Texture2D" uid="uid://bwbto47ns3bhk" path="res://sprites/climb_1k.png" id="4_m6ksn"]
+[ext_resource type="Texture2D" uid="uid://b0gj0hya1k0ka" path="res://sprites/climb_2k.png" id="5_h2qbh"]
 [ext_resource type="PackedScene" uid="uid://ddd8ihg30lr2b" path="res://ui/keys.tscn" id="6_24kit"]
 [ext_resource type="Texture2D" uid="uid://0rsrm856e3do" path="res://sprites/turn_1.png" id="8_ljwl6"]
 [ext_resource type="Texture2D" uid="uid://cjol0kd5xhyc8" path="res://sprites/turn_2.png" id="9_iipbr"]
+[ext_resource type="Texture2D" uid="uid://dluv7862e8g0r" path="res://sprites/run_1k.png" id="10_yarx8"]
+[ext_resource type="Texture2D" uid="uid://ddy84sdssnu0e" path="res://sprites/run_2k.png" id="11_y2lww"]
+[ext_resource type="Texture2D" uid="uid://cwsu3gbg7rmog" path="res://sprites/turn_1k.png" id="14_c8fgw"]
+[ext_resource type="Texture2D" uid="uid://qxjb1gicsyxk" path="res://sprites/turn_2k.png" id="15_6gt74"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1nwvn"]
 radius = 0.25
@@ -26,6 +32,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"climb",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m6ksn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h2qbh")
+}],
+"loop": true,
+"name": &"climb_key",
 "speed": 4.0
 }, {
 "frames": [{
@@ -52,6 +69,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_yarx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y2lww")
+}],
+"loop": true,
+"name": &"run_key",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_ljwl6")
 }, {
 "duration": 1.0,
@@ -59,6 +87,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"turn-key",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_c8fgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6gt74")
+}],
+"loop": true,
+"name": &"turn-key_key",
 "speed": 4.0
 }]
 
@@ -75,8 +114,6 @@ transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_urhlo")
 animation = &"climb"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.314005
 
 [node name="Interactions" type="Area3D" parent="."]
 collision_layer = 2
