@@ -6,7 +6,7 @@ var keys_before: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	keys = $"../".normalKeys
-	play()
+	keys_before = $"../".normalKeys
 	pass # Replace with function body.
 
 
@@ -14,11 +14,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	keys = $"../".normalKeys
 	print(keys)
-	if (keys == 7):
-		keys_before = $"../".normalKeys
-		stop()
 	if ((keys == 3) && !has_stream_playback()):
+		keys_before = $"../".normalKeys
 		play()
-	if (keys == -1):
+	if (keys == 0):
+		keys_before = $"../".normalKeys
 		stop()
 	pass

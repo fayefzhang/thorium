@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dna1lkeglk04a"]
+[gd_scene load_steps=19 format=3 uid="uid://dna1lkeglk04a"]
 
 [ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_6j3v4"]
 [ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="2_cfhjb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/level1.tscn" id="4_vqk7e"]
 [ext_resource type="AudioStream" uid="uid://bani8b8c1iq14" path="res://Audio/Underneath_the_Starlit_Sky_minor.mp3" id="5_1xqhd"]
 [ext_resource type="AudioStream" uid="uid://bxqxd3q8ul4fs" path="res://Audio/For the Past Rock.mp3" id="5_61u65"]
+[ext_resource type="Script" path="res://scenes/fourth_to_fifth_audio.gd" id="5_e6lbr"]
 [ext_resource type="Script" path="res://scenes/audio_stream_player.gd" id="5_hlbt4"]
 [ext_resource type="AudioStream" uid="uid://bawico5sil23l" path="res://Audio/Planet_in_the_Sky_minor.mp3" id="5_qfvme"]
 [ext_resource type="AudioStream" uid="uid://cfljb1lwcmkel" path="res://Audio/Viola_Concerto_in_D_Minor_rock.mp3" id="6_20y7y"]
@@ -14,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bnsqxl074gpni" path="res://Audio/Unstable_Pillars_2.mp3" id="7_38a0a"]
 [ext_resource type="AudioStream" uid="uid://cpdxhqdguapc" path="res://Audio/Incentive_Rock.ogg" id="7_wmhs4"]
 [ext_resource type="Script" path="res://scenes/first_to_second.gd" id="8_ilgmi"]
+[ext_resource type="Script" path="res://scenes/fifth_to_eighth.gd" id="9_hs3sd"]
 [ext_resource type="Script" path="res://scenes/start_to_first_and_eighth_to_end.gd" id="10_5i204"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2wxix"]
@@ -45,6 +47,7 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -1.80559, 3.03191, 1
 
 [node name="Fourth_to_fifth_audio" type="AudioStreamPlayer" parent="MainCharacter"]
 stream = ExtResource("5_qfvme")
+script = ExtResource("5_e6lbr")
 
 [node name="Second_to_fourth" type="AudioStreamPlayer" parent="MainCharacter"]
 stream = ExtResource("6_20y7y")
@@ -52,6 +55,7 @@ script = ExtResource("6_eewjp")
 
 [node name="fifth_to_eighth" type="AudioStreamPlayer" parent="MainCharacter"]
 stream = ExtResource("7_38a0a")
+script = ExtResource("9_hs3sd")
 
 [node name="first_to_second" type="AudioStreamPlayer" parent="MainCharacter"]
 stream = ExtResource("5_61u65")
