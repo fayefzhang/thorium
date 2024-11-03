@@ -20,5 +20,9 @@ func interactText(character: main_character) -> String:
 
 func interact(character: main_character) -> void:
 	if character.is_on_floor() and !character.isClimbing:
-		
-		character.startClimb()
+		character.clampToLadderXZDirs($ClimbMarker.global_position)
+		var secondArgs = to_global(Vector3(0, 0, 0))
+		character.startClimb(secondArgs)
+		print(to_global(Vector3(0,0,0)))
+		print($CollisionShape3D.shape.get_size().z/2)
+		print($CollisionShape3D.shape.get_size().x/2)

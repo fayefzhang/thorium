@@ -1,7 +1,7 @@
 extends StaticBody3D
 
 var rotationTween: Tween = null
-var timeForFullRotation: float = 0
+var timeForFullRotation: float = 3
 
 
 # Called when the node enters the scene tree for the first time.

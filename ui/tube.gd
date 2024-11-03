@@ -10,7 +10,7 @@ var max_y: float = 4.688
 # goop values
 @onready var goop = $"../Goop"
 @onready var goop_min_y = goop.position.y
-var goop_max_growth = 15.0
+var goop_max_growth = 70.0
 
 # mc icon values
 var icon_min_x: float = 117.188
