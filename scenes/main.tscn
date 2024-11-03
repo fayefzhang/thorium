@@ -1,11 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://vgwx0xr071w7"]
+[gd_scene load_steps=8 format=3 uid="uid://vgwx0xr071w7"]
 
 [ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="1_0gfn4"]
 [ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_a6xv6"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="2_8wjxu"]
 [ext_resource type="PackedScene" uid="uid://dp4tmuufa1kam" path="res://scenes/level1.tscn" id="4_iqrny"]
 
+[sub_resource type="Sky" id="Sky_wi31o"]
+
+[sub_resource type="Environment" id="Environment_yp15t"]
+background_energy_multiplier = 0.45
+sky = SubResource("Sky_wi31o")
+sky_custom_fov = 13.5
+ambient_light_color = Color(0.14902, 0.568627, 0.870588, 1)
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0.470588, 0.407843, 0.227451, 1)
+volumetric_fog_emission = Color(0.0568428, 0.233885, 0.00797348, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4hvjj"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 6.0
+
 [node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yp15t")
+camera_attributes = SubResource("CameraAttributesPractical_4hvjj")
 
 [node name="Tube" parent="." instance=ExtResource("1_a6xv6")]
 z_index = -1
@@ -17,19 +39,19 @@ offset_right = 79.0
 offset_bottom = 295.0
 
 [node name="Goop" parent="." instance=ExtResource("1_0gfn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270057, -12.7394, 0.00412583)
+transform = Transform3D(3.16816, 0, 0, 0, 3.16816, 0, 0, 0, 3.16816, 0.00270057, -12.7394, 0.00412583)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Goop"]
-transform = Transform3D(1, 0, 0, 0, -0.00844735, 0.999964, 0, -0.999964, -0.00844735, 0, 6.62416, 0)
+transform = Transform3D(1, 0, 0, 0, -0.00844735, 0.999964, 0, -0.999964, -0.00844735, -0.657502, 1.21567, 7.09204)
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_8wjxu")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -1.80559, 3.03191, 1.34413)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.73109, 67.4974, 4.18454)
 
 [node name="Camera3D" type="Camera3D" parent="MainCharacter"]
-transform = Transform3D(6.66667, 0, 0, 0, 6.14593, 2.58301, 0, -2.58301, 6.14593, 0.239402, 2.26087, 4.83361)
+transform = Transform3D(1.27185, 0, 0, 0, 1.17251, 0.492779, 0, -0.492779, 1.17251, 0.0818624, 0.841873, 3.59598)
 
 [node name="Level1" parent="." instance=ExtResource("4_iqrny")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.2244, 0)
+transform = Transform3D(4.99098, 0, 0, 0, 4.99098, 0, 0, 0, 4.99098, 0, -13.2244, 0)
 
 [connection signal="ready" from="Tube" to="Tube" method="_on_ready"]
 [connection signal="ready" from="Goop" to="Tube" method="_on_goop_ready"]

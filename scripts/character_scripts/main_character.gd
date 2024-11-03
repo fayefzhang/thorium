@@ -15,7 +15,7 @@ const CLIMB_SPEED: float = 5.0
 var facing: int = -1
 var normalKeys: int = 0
 
-const SPEED = 2.0
+const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var interactionObject: Interactable = null
 
