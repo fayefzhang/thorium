@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
-var lower_bound = 0.01
-var upper_bound = 2.0
+var lower_bound = 5.0
+var upper_bound = 10.0
 
 @onready var mc = $"../MainCharacter"
 @onready var goop = $"../Goop"
@@ -15,5 +15,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var strings = clamp(((mc.position.y - goop.position.y) - lower_bound)/(upper_bound - lower_bound), 0, 1)
 	var rock = 1.0 - strings
-	stream.set_sync_stream_volume(1, -40 + strings*40)
-	stream.set_sync_stream_volume(0, -40 + rock*40)
+	#print(mc.position.y - goop.position.y)
+	stream.set_sync_stream_volume(0, -40 + strings*40)
+	stream.set_sync_stream_volume(1, -40 + rock*40)
