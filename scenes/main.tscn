@@ -15,9 +15,10 @@ ambient_light_color = Color(0.14902, 0.568627, 0.870588, 1)
 fog_mode = 1
 fog_density = 1.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
+volumetric_fog_density = 0.5
 volumetric_fog_albedo = Color(0.470588, 0.407843, 0.227451, 1)
 volumetric_fog_emission = Color(0.0568428, 0.233885, 0.00797348, 1)
+volumetric_fog_emission_energy = 3.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4hvjj"]
 dof_blur_far_enabled = true
