@@ -23,7 +23,7 @@ var facing: int = -1
 var normalKeys: int = 0
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.0
 var interactionObject: Interactable = null
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
