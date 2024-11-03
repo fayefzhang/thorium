@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://8mbxm44ah628"]
+[gd_scene load_steps=6 format=3 uid="uid://8mbxm44ah628"]
 
 [ext_resource type="Script" path="res://scripts/goop.gd" id="1_6pqu4"]
+[ext_resource type="PackedScene" uid="uid://dnxtnrahwi1xa" path="res://scenes/WaterPlane.tscn" id="2_pqt6m"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_skn3d"]
 
@@ -21,5 +22,7 @@ shape = SubResource("WorldBoundaryShape3D_skn3d")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_r4nr6")
 surface_material_override/0 = SubResource("StandardMaterial3D_foew7")
+
+[node name="WaterPlane" parent="." instance=ExtResource("2_pqt6m")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

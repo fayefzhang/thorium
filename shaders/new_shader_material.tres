@@ -1,7 +1,57 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://etr4dnbqhnrm"]
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://etr4dnbqhnrm"]
 
 [ext_resource type="Shader" path="res://shaders/Water.gdshader" id="1_uk87l"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aygxo"]
+noise_type = 0
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k0s52"]
+seamless = true
+as_normal_map = true
+bump_strength = 10.0
+noise = SubResource("FastNoiseLite_aygxo")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6lc5d"]
+noise_type = 0
+seed = 10
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_30eqr"]
+seamless = true
+as_normal_map = true
+bump_strength = 10.0
+noise = SubResource("FastNoiseLite_6lc5d")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ygoxa"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i22l4"]
+seamless = true
+as_normal_map = true
+bump_strength = 100.0
+noise = SubResource("FastNoiseLite_ygoxa")
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_uk87l")
+shader_parameter/albedo = Color(0, 0.343804, 0.123779, 1)
+shader_parameter/albedo2 = Color(0, 1, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.1
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.025
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.15
+shader_parameter/color_deep = Color(0, 0, 1, 1)
+shader_parameter/color_shallow = Color(1.20327e-07, 0.386134, 0.398769, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 0.5
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/wave = SubResource("NoiseTexture2D_i22l4")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_k0s52")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_30eqr")
