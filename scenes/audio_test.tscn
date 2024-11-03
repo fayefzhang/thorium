@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dna1lkeglk04a"]
+[gd_scene load_steps=19 format=3 uid="uid://dna1lkeglk04a"]
 
 [ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_6j3v4"]
 [ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="2_cfhjb"]
@@ -6,12 +6,17 @@
 [ext_resource type="PackedScene" path="res://scenes/level1.tscn" id="4_vqk7e"]
 [ext_resource type="AudioStream" uid="uid://bani8b8c1iq14" path="res://Audio/Underneath_the_Starlit_Sky_minor.mp3" id="5_1xqhd"]
 [ext_resource type="AudioStream" uid="uid://bxqxd3q8ul4fs" path="res://Audio/For the Past Rock.mp3" id="5_61u65"]
+[ext_resource type="Script" path="res://scenes/fourth_to_fifth_audio.gd" id="5_e6lbr"]
 [ext_resource type="Script" path="res://scenes/audio_stream_player.gd" id="5_hlbt4"]
 [ext_resource type="AudioStream" uid="uid://bawico5sil23l" path="res://Audio/Planet_in_the_Sky_minor.mp3" id="5_qfvme"]
 [ext_resource type="AudioStream" uid="uid://cfljb1lwcmkel" path="res://Audio/Viola_Concerto_in_D_Minor_rock.mp3" id="6_20y7y"]
+[ext_resource type="Script" path="res://scenes/second_to_fourth.gd" id="6_eewjp"]
 [ext_resource type="AudioStream" uid="uid://dva4g656y0ui8" path="res://Audio/Incentive_225.ogg" id="6_ys41k"]
 [ext_resource type="AudioStream" uid="uid://bnsqxl074gpni" path="res://Audio/Unstable_Pillars_2.mp3" id="7_38a0a"]
 [ext_resource type="AudioStream" uid="uid://cpdxhqdguapc" path="res://Audio/Incentive_Rock.ogg" id="7_wmhs4"]
+[ext_resource type="Script" path="res://scenes/first_to_second.gd" id="8_ilgmi"]
+[ext_resource type="Script" path="res://scenes/fifth_to_eighth.gd" id="9_hs3sd"]
+[ext_resource type="Script" path="res://scenes/start_to_first_and_eighth_to_end.gd" id="10_5i204"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2wxix"]
 stream_count = 2
@@ -40,31 +45,36 @@ transform = Transform3D(1, 0, 0, 0, -0.00844735, 0.999964, 0, -0.999964, -0.0084
 [node name="MainCharacter" parent="." instance=ExtResource("3_p0ymx")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -1.80559, 3.03191, 1.34413)
 
+[node name="Fourth_to_fifth_audio" type="AudioStreamPlayer" parent="MainCharacter"]
+stream = ExtResource("5_qfvme")
+script = ExtResource("5_e6lbr")
+
+[node name="Second_to_fourth" type="AudioStreamPlayer" parent="MainCharacter"]
+stream = ExtResource("6_20y7y")
+script = ExtResource("6_eewjp")
+
+[node name="fifth_to_eighth" type="AudioStreamPlayer" parent="MainCharacter"]
+stream = ExtResource("7_38a0a")
+script = ExtResource("9_hs3sd")
+
+[node name="first_to_second" type="AudioStreamPlayer" parent="MainCharacter"]
+stream = ExtResource("5_61u65")
+script = ExtResource("8_ilgmi")
+
+[node name="Start_to_first_and_eighth_to_end" type="AudioStreamPlayer" parent="MainCharacter"]
+stream = ExtResource("5_1xqhd")
+autoplay = true
+script = ExtResource("10_5i204")
+
+[node name="Way_Up_Audio" type="AudioStreamPlayer" parent="MainCharacter"]
+stream = SubResource("AudioStreamSynchronized_2wxix")
+script = ExtResource("5_hlbt4")
+
 [node name="Camera3D" type="Camera3D" parent="MainCharacter"]
 transform = Transform3D(6.66667, 0, 0, 0, 6.14593, 2.58301, 0, -2.58301, 6.14593, 0.239402, 2.26087, 4.83361)
 
 [node name="Level1" parent="." instance=ExtResource("4_vqk7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.2244, 0)
-
-[node name="Fourth_to_fifth_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_qfvme")
-
-[node name="Second_to_fourth" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_20y7y")
-
-[node name="fifth_to_eighth" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_38a0a")
-
-[node name="first_to_second" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_61u65")
-
-[node name="Start_to_first_and_eighth_to_end" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_1xqhd")
-autoplay = true
-
-[node name="Way_Up_Audio" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamSynchronized_2wxix")
-script = ExtResource("5_hlbt4")
 
 [connection signal="ready" from="Tube" to="Tube" method="_on_ready"]
 [connection signal="ready" from="Goop" to="Tube" method="_on_goop_ready"]
