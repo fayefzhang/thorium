@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bx5mx8k84fwq2"]
 
-[ext_resource type="ArrayMesh" uid="uid://c1dviwpuwb8wh" path="res://3d models/hazard_ladder_new.obj" id="1_1ldld"]
+[ext_resource type="ArrayMesh" uid="uid://bh3fmltr37vlr" path="res://3d models/hazard_ladder_new.obj" id="1_1ldld"]
 [ext_resource type="Script" path="res://scripts/ladder_top_get_off.gd" id="1_cry3f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_phnmm"]

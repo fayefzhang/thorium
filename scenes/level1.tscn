@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dqnltdd1vam12" path="res://scenes/obstacles/gear.tscn" id="2_4ggkl"]
 [ext_resource type="PackedScene" uid="uid://cpvem30ymu6su" path="res://scenes/obstacles/scaffolding-single.tscn" id="2_n668i"]
 [ext_resource type="PackedScene" uid="uid://da8nh5rymj7r5" path="res://scenes/obstacles/scaffolding.tscn" id="4_j30ia"]
-[ext_resource type="PackedScene" uid="uid://b6rreru5wjyuq" path="res://scenes/full_ladder.tscn" id="5_ytdfw"]
+[ext_resource type="PackedScene" uid="uid://b7ov1kys4o0v2" path="res://scenes/full_ladder.tscn" id="5_ytdfw"]
 [ext_resource type="PackedScene" uid="uid://bwyq0mbar03hf" path="res://scenes/obstacles/vault.tscn" id="6_sej61"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dgivr"]

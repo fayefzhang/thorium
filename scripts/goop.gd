@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print(position.y)
 	if isRising:
 		position.y += riseRate * delta
 
@@ -24,6 +25,18 @@ func pause() -> void:
 	
 func start() -> void:
 	isRising = true
+
+func lower(amount: float, time: float) -> void:
+	var riseRateOld = riseRate
+	pause()
+	riseRate = -amount / time
+	start()
+	create_tween().tween_callback(func():
+		pause()
+		riseRate = riseRateOld
+		start()
+	).set_delay(time)
+	
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is main_character:

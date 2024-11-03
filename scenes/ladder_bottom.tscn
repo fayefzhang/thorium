@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdhbgse37l8c1"]
 
 [ext_resource type="Script" path="res://scripts/ladder_bottom_interaction.gd" id="2_3blsw"]
-[ext_resource type="ArrayMesh" uid="uid://c1dviwpuwb8wh" path="res://3d models/hazard_ladder_new.obj" id="2_eqkpe"]
+[ext_resource type="ArrayMesh" uid="uid://bh3fmltr37vlr" path="res://3d models/hazard_ladder_new.obj" id="2_eqkpe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cshir"]
 size = Vector3(1.05839, 1.6358, 0.457886)
