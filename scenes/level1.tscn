@@ -109,7 +109,6 @@ transform = Transform3D(14.9379, 0, 0, 0, 2.44188, 0, 0, 0, 3.88888, 0.574242, -
 mesh = SubResource("BoxMesh_mbj3d")
 
 [node name="OBSTACLES" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Gear" parent="OBSTACLES" instance=ExtResource("2_4ggkl")]
 transform = Transform3D(3.21, 0, 0, 0, 3.21, 0, 0, 0, 3.21, 2.82296, 14.1683, 1.37031)
@@ -129,9 +128,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92246, 12.5819, 1.51141)
 [node name="Scaffolding3" parent="OBSTACLES" instance=ExtResource("4_j30ia")]
 transform = Transform3D(0.71, 0, 0, 0, 0.71, 0, 0, 0, 0.71, 4.5351, 6.1752, 1.05735)
 
-[node name="Scaffolding-single" parent="OBSTACLES" instance=ExtResource("2_n668i")]
-transform = Transform3D(0.237431, 0, 0, 0, 0.211272, 0, 0, 0, 0.174653, 3.11691, 15.9726, 0.566175)
-
 [node name="Scaffolding-single2" parent="OBSTACLES" instance=ExtResource("2_n668i")]
 transform = Transform3D(0.233647, 0, -0.0310604, 0, 0.211272, 0, 0.0422249, 0, 0.171869, 3.52411, 15.9726, 0.898952)
 
@@ -143,6 +139,9 @@ transform = Transform3D(0.496089, 0, -0.0914372, 0, 0.867086, 0, 0.154477, 0, 0.
 
 [node name="Scaffolding-single4" parent="OBSTACLES" instance=ExtResource("2_n668i")]
 transform = Transform3D(0.577239, 0, 0.242796, 0, 0.592, 0, -0.330182, 0, 0.424466, 0.723309, 4.49321, 0.562442)
+
+[node name="Scaffolding-single" parent="OBSTACLES" instance=ExtResource("2_n668i")]
+transform = Transform3D(0.237431, 0, 0, 0, 0.211272, 0, 0, 0, 0.174653, 3.11691, 15.9726, 0.566175)
 
 [node name="VAULTS" type="Node3D" parent="."]
 

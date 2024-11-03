@@ -1,13 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://ct7cdinjkwtg7"]
+[gd_scene load_steps=11 format=3 uid="uid://ct7cdinjkwtg7"]
 
 [ext_resource type="Texture2D" uid="uid://brnkj70owa7vn" path="res://icon.svg" id="1_5kcvp"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_x1umk"]
-[ext_resource type="PackedScene" uid="uid://dep6lfycw6b38" path="res://scenes/obstacles/key_hole.tscn" id="4_wpf6j"]
-[ext_resource type="PackedScene" path="res://scenes/gear.tscn" id="5_6whhk"]
+[ext_resource type="PackedScene" uid="uid://dep6lfycw6b38" path="res://scenes/key_hole.tscn" id="4_wpf6j"]
+[ext_resource type="PackedScene" uid="uid://bx5mx8k84fwq2" path="res://scenes/ladder_top.tscn" id="6_jxbno"]
 [ext_resource type="PackedScene" uid="uid://cdhbgse37l8c1" path="res://scenes/ladder_bottom.tscn" id="6_tdc7h"]
-[ext_resource type="PackedScene" uid="uid://bx5mx8k84fwq2" path="res://scenes/ladder_top.tscn" id="7_nbjvq"]
 [ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="8_7yx7i"]
-
 
 [sub_resource type="Environment" id="Environment_sv1ol"]
 
@@ -20,7 +18,6 @@ albedo_texture = ExtResource("1_5kcvp")
 size = Vector3(5, 0.1, 5)
 
 [node name="OpenExploration" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.395833, 0.300948, -0.0048871)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sv1ol")
@@ -40,7 +37,7 @@ shape = SubResource("BoxShape3D_c3npb")
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.203594, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -4.9768e-08, 7.18741e-08, -3.51967e-08, 0.981763, 0.190107, -8.00246e-08, 0.190107, -0.981763, 0.332074, 4.39616, -3.88791)
+transform = Transform3D(-0.995296, 0.0246826, -0.0936799, 0.0234363, 0.999622, 0.0143806, 0.0939994, 0.0121175, -0.995499, -0.232068, 2.14084, -5.94372)
 top_level = true
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_x1umk")]
@@ -49,11 +46,8 @@ transform = Transform3D(-0.995265, 0, 0.0972016, 0, 1, 0, -0.0972016, 0, -0.9952
 [node name="KeyHole" parent="." instance=ExtResource("4_wpf6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79943, 0.90261, 0.248896)
 
-[node name="Gear" parent="." instance=ExtResource("5_6whhk")]
-transform = Transform3D(15.8843, 0, 0, 0, 15.8843, 0, 0, 0, 15.8843, 5.99988, 0.25, 0.913115)
-
 [node name="LadderBottom" parent="." instance=ExtResource("6_tdc7h")]
-transform = Transform3D(-2.02814, 0, -1.77306e-07, 0, 2.02814, 0, 1.77306e-07, 0, -2.02814, 0, 1.38753, 0.167818)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="ladderTop" parent="." instance=ExtResource("7_nbjvq")]
-transform = Transform3D(-2.028, 0, -1.77293e-07, 0, 2.028, 0, 1.77293e-07, 0, -2.028, 0.0542055, 3.42201, 0.171773)
+[node name="ladderTop" parent="." instance=ExtResource("6_jxbno")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00588393, 2.80939, -0.260807)
