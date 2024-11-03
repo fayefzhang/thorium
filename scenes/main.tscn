@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://vgwx0xr071w7"]
+[gd_scene load_steps=26 format=3 uid="uid://vgwx0xr071w7"]
 
 [ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="1_0gfn4"]
+[ext_resource type="PackedScene" uid="uid://bv067kjc6dbho" path="res://scenes/canvas_layer.tscn" id="1_52bwp"]
 [ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_a6xv6"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="2_8wjxu"]
 [ext_resource type="PackedScene" uid="uid://dp4tmuufa1kam" path="res://scenes/level1.tscn" id="4_iqrny"]
@@ -52,6 +53,9 @@ stream_1/volume = 0.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yp15t")
 camera_attributes = SubResource("CameraAttributesPractical_4hvjj")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_52bwp")]
+layer = 0
 
 [node name="Tube" parent="." instance=ExtResource("1_a6xv6")]
 z_index = -1
