@@ -31,6 +31,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+	print(is_on_floor())
 	velocity.x = 0
 	velocity.z = 0
 	
@@ -40,12 +41,19 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
+	# climbing movement
 	if isClimbing:
 		velocity.y = 0
-		var yMovement: = Input.get_vector("left", "right", "up", "down").y
-		if yMovement == 0:
+		var movement: Vector2 = Input.get_vector("left", "right", "up", "down")
+		var xMovement: float = movement.x
+		var yMovement: float = movement.y
+		#end climb animation
+		if is_on_floor() and movement.x != 0 and movement.y == 0:
+			endClimbBottom()
+		if yMovement == 0: # pause animation when still
 			$rotateSprite/AnimatedSprite3D.pause()
-		elif canContinueClimbingUp or yMovement < 0:
+		elif canContinueClimbingUp or yMovement < 0: # animation when moving
+
 			$rotateSprite/AnimatedSprite3D.play()
 			velocity.y = -(yMovement / abs(yMovement)) * CLIMB_SPEED
 		move_and_slide()
@@ -83,7 +91,7 @@ func _physics_process(delta):
 func _on_interactions_area_entered(area: Area3D) -> void:
 	if area is Interactable and area.canInteract(self):
 		$interactText.visible = true
-		$interactText.text = area.interactText()
+		$interactText.text = area.interactText(self)
 		interactionObject = area
 
 func _on_interactions_area_exited(area: Area3D) -> void:
@@ -112,5 +120,31 @@ func kill() -> void:
 func startClimb() -> void:
 	isClimbing = true
 	canContinueClimbingUp = true
-	$rotateSprite/AnimatedSprite3D.play("climb")
+	noInput = true
+	$rotateSprite/AnimatedSprite3D.play("idle")
 	$rotateSprite/AnimatedSprite3D.pause()
+	var climbTween: Tween = create_tween()
+	climbingTweenHelper(climbTween)
+	climbTween.tween_callback(func():
+		$rotateSprite/AnimatedSprite3D.play("climb")
+		$rotateSprite/AnimatedSprite3D.pause()
+		noInput = false
+	)
+
+func endClimbBottom() -> void:
+	isClimbing = false
+	noInput = true
+	var climbTween: Tween = create_tween()
+	climbingTweenHelper(climbTween)
+	climbTween.tween_callback(func():
+		$rotateSprite/AnimatedSprite3D.play("idle")
+		noInput = false
+	)
+	
+func climbingTweenHelper(climbTween: Tween):
+	if facing == -1:
+		climbTween.tween_property($rotateSprite, "rotation_degrees:y", 180, rotateTime)
+		facing = 1
+	else:
+		climbTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
+		facing = -1

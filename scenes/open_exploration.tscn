@@ -51,4 +51,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79943, 0.90261, 0.248896)
 transform = Transform3D(15.8843, 0, 0, 0, 15.8843, 0, 0, 0, 15.8843, 5.99988, 0.25, 0.913115)
 
 [node name="LadderBottom" parent="." instance=ExtResource("6_tdc7h")]
-transform = Transform3D(1, 0, 0, 0, 2.24231, 0, 0, 0, 1, -0.129513, 1.45645, 0.648781)
+transform = Transform3D(1, 0, 0, 0, 0.0313499, 0, 0, 0, 1, -0.0339132, 0.267177, 1.15247)

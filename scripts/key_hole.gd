@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func canInteract(character: main_character) -> bool:
 	return character.normalKeys > 0
 
-func interactText() -> String:
+func interactText(character: main_character) -> String:
 	return "Use Key"
 
 func interact(character: main_character) -> void:

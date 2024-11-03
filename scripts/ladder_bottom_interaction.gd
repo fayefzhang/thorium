@@ -13,8 +13,12 @@ func _process(delta: float) -> void:
 func canInteract(character: main_character) -> bool:
 	return character.is_on_floor() and !character.isClimbing
 
-func interactText() -> String:
-	return "Climb"
+func interactText(character: main_character) -> String:
+	if character.is_on_floor() and !character.isClimbing:
+		return "Climb"
+	return "ERROR"
 
 func interact(character: main_character) -> void:
-	character.startClimb()
+	if character.is_on_floor() and !character.isClimbing:
+		
+		character.startClimb()

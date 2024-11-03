@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func canInteract(character: main_character) -> bool:
 	return true
 
-func interactText() -> String:
+func interactText(character: main_character) -> String:
 	return "PLACEHOLDER"
 
 func interact(character: main_character) -> void:
