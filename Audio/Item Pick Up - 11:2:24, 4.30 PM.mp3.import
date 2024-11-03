@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r7ml38wl68nt"
+path="res://.godot/imported/Item Pick Up - 11:2:24, 4.30 PM.mp3-62e16e9d8670ce03b766620ea9ce70de.mp3str"
+
+[deps]
+
+source_file="res://Audio/Item Pick Up - 11:2:24, 4.30 PM.mp3"
+dest_files=["res://.godot/imported/Item Pick Up - 11:2:24, 4.30 PM.mp3-62e16e9d8670ce03b766620ea9ce70de.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

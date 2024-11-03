@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwj7grnrapbtv"
+path="res://.godot/imported/Unstable Pillars - 11:2:24, 5.59 PM.mp3-c2145efad7431d1ce7221844246f183d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Unstable Pillars - 11:2:24, 5.59 PM.mp3"
+dest_files=["res://.godot/imported/Unstable Pillars - 11:2:24, 5.59 PM.mp3-c2145efad7431d1ce7221844246f183d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

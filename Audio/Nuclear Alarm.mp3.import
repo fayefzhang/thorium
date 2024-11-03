@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q41j6ibyucgf"
+path="res://.godot/imported/Nuclear Alarm.mp3-27bd89c2a3e246300656648b0c5d26bd.mp3str"
+
+[deps]
+
+source_file="res://Audio/Nuclear Alarm.mp3"
+dest_files=["res://.godot/imported/Nuclear Alarm.mp3-27bd89c2a3e246300656648b0c5d26bd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
