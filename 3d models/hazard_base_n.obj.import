@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://digikfaexkvqs"
+path="res://.godot/imported/hazard_base_n.obj-4a5cc4d77915a43286cfd26a47ae2488.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hazard_base_n.obj-4a5cc4d77915a43286cfd26a47ae2488.mesh"]
+
+source_file="res://3d models/hazard_base_n.obj"
+dest_files=["res://.godot/imported/hazard_base_n.obj-4a5cc4d77915a43286cfd26a47ae2488.mesh", "res://.godot/imported/hazard_base_n.obj-4a5cc4d77915a43286cfd26a47ae2488.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
