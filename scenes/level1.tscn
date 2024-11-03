@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp4tmuufa1kam"]
+[gd_scene load_steps=10 format=3 uid="uid://dp4tmuufa1kam"]
 
 [ext_resource type="ArrayMesh" uid="uid://ccs6j1sgvj8vj" path="res://3d models/hazard_baseF.obj" id="1_hnmlf"]
 [ext_resource type="PackedScene" uid="uid://dqnltdd1vam12" path="res://scenes/obstacles/gear.tscn" id="2_4ggkl"]
 [ext_resource type="PackedScene" uid="uid://cpvem30ymu6su" path="res://scenes/obstacles/scaffolding-single.tscn" id="2_n668i"]
 [ext_resource type="PackedScene" uid="uid://da8nh5rymj7r5" path="res://scenes/obstacles/scaffolding.tscn" id="4_j30ia"]
+[ext_resource type="PackedScene" path="res://scenes/full_ladder.tscn" id="5_ytdfw"]
 [ext_resource type="PackedScene" uid="uid://bwyq0mbar03hf" path="res://scenes/obstacles/vault.tscn" id="6_sej61"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g1gnx"]
@@ -142,6 +143,12 @@ transform = Transform3D(0.577239, 0, 0.242796, 0, 0.592, 0, -0.330182, 0, 0.4244
 
 [node name="Scaffolding-single" parent="OBSTACLES" instance=ExtResource("2_n668i")]
 transform = Transform3D(0.237431, 0, 0, 0, 0.211272, 0, 0, 0, 0.174653, 3.11691, 15.9726, 0.566175)
+
+[node name="FullLadder" parent="OBSTACLES" instance=ExtResource("5_ytdfw")]
+transform = Transform3D(0.184, 0, 0, 0, 0.184, 0, 0, 0, 0.184, -0.163499, 12.3731, 0.717381)
+
+[node name="FullLadder2" parent="OBSTACLES" instance=ExtResource("5_ytdfw")]
+transform = Transform3D(0.0690367, 0, 0.0384048, 0, 0.0789999, 0, -0.0384048, 0, 0.0690367, -0.00980245, 11.9976, 1.07347)
 
 [node name="VAULTS" type="Node3D" parent="."]
 

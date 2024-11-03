@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c62b573y4dh4o"
+path="res://.godot/imported/hazard_wheel_front.obj-034b9b86f34626512e1795e691339d86.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hazard_wheel_front.obj-034b9b86f34626512e1795e691339d86.mesh"]
+
+source_file="res://3d models/hazard_wheel_front.obj"
+dest_files=["res://.godot/imported/hazard_wheel_front.obj-034b9b86f34626512e1795e691339d86.mesh", "res://.godot/imported/hazard_wheel_front.obj-034b9b86f34626512e1795e691339d86.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

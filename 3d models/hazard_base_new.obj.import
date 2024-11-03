@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwgowvcltmpmi"
+path="res://.godot/imported/hazard_base_new.obj-f8da2b32ef1a69341412b743f31f6817.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hazard_base_new.obj-f8da2b32ef1a69341412b743f31f6817.mesh"]
+
+source_file="res://3d models/hazard_base_new.obj"
+dest_files=["res://.godot/imported/hazard_base_new.obj-f8da2b32ef1a69341412b743f31f6817.mesh", "res://.godot/imported/hazard_base_new.obj-f8da2b32ef1a69341412b743f31f6817.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://oe3cfcgn4qy1"
+path="res://.godot/imported/hazard_scaffolding_new.obj-37958975e8bad534bacbff8beb79681f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hazard_scaffolding_new.obj-37958975e8bad534bacbff8beb79681f.mesh"]
+
+source_file="res://3d models/hazard_scaffolding_new.obj"
+dest_files=["res://.godot/imported/hazard_scaffolding_new.obj-37958975e8bad534bacbff8beb79681f.mesh", "res://.godot/imported/hazard_scaffolding_new.obj-37958975e8bad534bacbff8beb79681f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
