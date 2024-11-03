@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://vgwx0xr071w7"]
+
+[ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="1_0gfn4"]
+[ext_resource type="PackedScene" uid="uid://dyolwf6k87gct" path="res://ui/tube.tscn" id="1_a6xv6"]
+[ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="2_8wjxu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gof5q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v4kcs"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Tube" parent="." instance=ExtResource("1_a6xv6")]
+z_index = -1
+anchor_right = 0.817708
+anchor_bottom = 0.0601852
+offset_left = 79.0
+offset_top = 295.0
+offset_right = 79.0
+offset_bottom = 295.0
+
+[node name="Goop" parent="." instance=ExtResource("1_0gfn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00270057, -12.7394, 0.00412583)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Goop"]
+transform = Transform3D(1, 0, 0, 0, -0.00844735, 0.999964, 0, -0.999964, -0.00844735, 0, 6.62416, 0)
+
+[node name="MainCharacter" parent="." instance=ExtResource("2_8wjxu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.385522, 2.77175, 2.67432)
+
+[node name="Camera3D" type="Camera3D" parent="MainCharacter"]
+transform = Transform3D(1, 0, 0, 0, 0.741812, 0.670608, 0, -0.670608, 0.741812, 0.284735, 2.71858, 3.28381)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445558, 3.01529, 2.53008)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.41894, -0.122274)
+shape = SubResource("BoxShape3D_gof5q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0126846, -1.43675, -0.130569)
+mesh = SubResource("BoxMesh_v4kcs")
+
+[connection signal="ready" from="Tube" to="Tube" method="_on_ready"]
+[connection signal="ready" from="Goop" to="Tube" method="_on_goop_ready"]

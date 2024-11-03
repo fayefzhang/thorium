@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://qi6vdk3pfckg"]
+[gd_scene load_steps=5 format=3 uid="uid://c2rtqng85uk78"]
 
-[ext_resource type="PackedScene" uid="uid://cbj2q14dkv150" path="res://scenes/goop.tscn" id="1_6okmp"]
+[ext_resource type="PackedScene" uid="uid://8mbxm44ah628" path="res://scenes/goop.tscn" id="1_6okmp"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="2_1camf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kp0lr"]
