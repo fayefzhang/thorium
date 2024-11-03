@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqqhp2pbwsnam"]
+[gd_scene load_steps=7 format=3 uid="uid://cqqhp2pbwsnam"]
 
 [ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="2_taqrp"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_se4vx"]
+[ext_resource type="AudioStream" uid="uid://dgnwxnavr3g07" path="res://Audio/Thorium.mp3" id="3_v5351"]
 
 [sub_resource type="Environment" id="Environment_83dfm"]
 
@@ -35,3 +36,7 @@ top_level = true
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_se4vx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69884, 1.54238, 0.813499)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v5351")
+autoplay = true

@@ -44,10 +44,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.2244, 0)
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_elt8m")
+autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_2wxix")
-autoplay = true
 script = ExtResource("5_hlbt4")
 
 [connection signal="ready" from="Tube" to="Tube" method="_on_ready"]
