@@ -11,11 +11,12 @@ var noInput: bool = false
 var isClimbing: bool = false
 var canContinueClimbingUp: bool = true
 const CLIMB_SPEED: float = 5.0
+var zOffset: float
 
 var facing: int = -1
 var normalKeys: int = 0
 
-const SPEED = 2.0
+const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var interactionObject: Interactable = null
 
@@ -31,7 +32,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
-	print(is_on_floor())
 	velocity.x = 0
 	velocity.z = 0
 	
@@ -48,8 +48,13 @@ func _physics_process(delta):
 		var xMovement: float = movement.x
 		var yMovement: float = movement.y
 		#end climb animation
-		if is_on_floor() and movement.x != 0 and movement.y == 0:
-			endClimbBottom()
+		if is_on_floor():# and movement.x != 0 and movement.y == 0:
+			$interactText.visible = true
+			$interactText.text = "Get Down"
+			if Input.is_action_just_pressed("interact"):
+				endClimbBottom()
+		else:
+			$interactText.visible = false
 		if yMovement == 0: # pause animation when still
 			$rotateSprite/AnimatedSprite3D.pause()
 		elif canContinueClimbingUp or yMovement < 0: # animation when moving
@@ -117,10 +122,13 @@ func kill() -> void:
 	noInput = true
 	print("PLAYER DIED: GAME OVER")
 
-func startClimb() -> void:
+func startClimb(offsetZ: float) -> void:
+	set_collision_layer_value(3, true)
+	set_collision_mask_value(3, true)
 	isClimbing = true
 	canContinueClimbingUp = true
 	noInput = true
+	zOffset = offsetZ
 	$rotateSprite/AnimatedSprite3D.play("idle")
 	$rotateSprite/AnimatedSprite3D.pause()
 	var climbTween: Tween = create_tween()
@@ -132,15 +140,24 @@ func startClimb() -> void:
 	)
 
 func endClimbBottom() -> void:
+	set_collision_layer_value(3, false)
 	isClimbing = false
+	# TODO: fix bug where you have to leave and come back to be able to climb again
+	$interactText.visible = false
 	noInput = true
+	create_tween().tween_property(self, "position:z", position.z - zOffset, rotateTime)
 	var climbTween: Tween = create_tween()
 	climbingTweenHelper(climbTween)
 	climbTween.tween_callback(func():
 		$rotateSprite/AnimatedSprite3D.play("idle")
 		noInput = false
 	)
+
+func endClimbTop(posX: float, posY: float) -> void:
+	set_collision_layer_value(3, false)
 	
+
+
 func climbingTweenHelper(climbTween: Tween):
 	if facing == -1:
 		climbTween.tween_property($rotateSprite, "rotation_degrees:y", 180, rotateTime)
@@ -148,3 +165,8 @@ func climbingTweenHelper(climbTween: Tween):
 	else:
 		climbTween.tween_property($rotateSprite, "rotation_degrees:y", 0, rotateTime)
 		facing = -1
+
+func clampToLadderXZDirs(posX: float, posZ: float):
+	if is_on_floor() and !isClimbing:
+		create_tween().tween_property(self, "position:x", posX, rotateTime)
+		create_tween().tween_property(self, "position:z", posZ, rotateTime)

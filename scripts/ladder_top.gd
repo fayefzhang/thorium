@@ -14,11 +14,10 @@ func canInteract(character: main_character) -> bool:
 	return character.is_on_floor() and !character.isClimbing
 
 func interactText(character: main_character) -> String:
-	if character.is_on_floor() and !character.isClimbing:
-		return "Climb"
+	if character.isClimbing:
+		return "Get Up"
 	return "ERROR"
 
 func interact(character: main_character) -> void:
-	var zOffset: float =  to_global(Vector3(0,0, -$CollisionShape3D.shape.get_size().z/2)).z
-	character.clampToLadderXZDirs(position.x, zOffset)
-	character.startClimb((zOffset / abs(zOffset)) * $CollisionShape3D.shape.get_size().z/2)
+	if character.isClimbing:
+		character.endClimbTop()
