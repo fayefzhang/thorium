@@ -13,6 +13,12 @@ var canContinueClimbingUp: bool = true
 const CLIMB_SPEED: float = 5.0
 var zOffset: Vector3
 
+var hasBigKey = false
+
+#animation names
+var walkAnimation: String = "run"
+var climbAnimation: String = "climb"
+
 var facing: int = -1
 var normalKeys: int = 0
 
@@ -89,7 +95,7 @@ func _physics_process(delta):
 			var rotateTween: Tween = $rotateSprite.create_tween()
 			rotateTween.tween_property($rotateSprite, "rotation_degrees:y", 180, rotateTime)
 			facing = 1
-		$rotateSprite/AnimatedSprite3D.play("run")
+		$rotateSprite/AnimatedSprite3D.play(walkAnimation)
 	else:
 		$rotateSprite/AnimatedSprite3D.play("idle")
 	
@@ -139,7 +145,7 @@ func startClimb(offsetZ: Vector3) -> void:
 	var climbTween: Tween = create_tween()
 	climbingTweenHelper(climbTween)
 	climbTween.tween_callback(func():
-		$rotateSprite/AnimatedSprite3D.play("climb")
+		$rotateSprite/AnimatedSprite3D.play(climbAnimation)
 		$rotateSprite/AnimatedSprite3D.pause()
 		noInput = false
 	)

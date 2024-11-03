@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqlo6s7cftvle"]
+
+[ext_resource type="Script" path="res://scripts/big_key.gd" id="1_1yw7d"]
+
+[node name="BIGKEY" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1yw7d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
