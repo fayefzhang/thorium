@@ -121,7 +121,7 @@ func useKey(time: float) -> void:
 		$use_key.play()
 		var turnKeyTween: Tween = create_tween()
 		noInput = true
-		$rotateSprite/AnimatedSprite3D.play("turn-key")
+		$rotateSprite/AnimatedSprite3D.play(turnKeyAnimation)
 		turnKeyTween.tween_callback(finishAnimation).set_delay(time)
 
 func finishAnimation() -> void:
