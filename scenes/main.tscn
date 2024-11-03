@@ -55,6 +55,8 @@ environment = SubResource("Environment_yp15t")
 camera_attributes = SubResource("CameraAttributesPractical_4hvjj")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_52bwp")]
+process_mode = 4
+process_physics_priority = -2
 layer = 0
 
 [node name="Tube" parent="." instance=ExtResource("1_a6xv6")]
