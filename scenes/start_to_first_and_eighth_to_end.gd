@@ -21,4 +21,6 @@ func _process(delta: float) -> void:
 		play()
 	if (keys == -1):
 		stop()
+	if ($"../GameOver".visible):
+		stop()
 	pass

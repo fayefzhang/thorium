@@ -20,4 +20,6 @@ func _process(delta: float) -> void:
 	if (keys == 0):
 		keys_before = $"../".normalKeys
 		stop()
+	if ($"../GameOver".visible):
+		stop()
 	pass
