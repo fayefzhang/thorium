@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dha72rpe1n1f6"]
+
+[ext_resource type="Script" path="res://scenes/windoor.gd" id="1_v3bss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmth4"]
+size = Vector3(1, 1.44751, 1)
+
+[node name="WinDoor" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_v3bss")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.734009, 0)
+shape = SubResource("BoxShape3D_mmth4")

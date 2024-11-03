@@ -35,6 +35,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready() -> void:
 	normalKeys = $Keys.numKeys
 	$GameOver.visible = false
+	$WinScreen.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
@@ -190,3 +191,7 @@ func clampToLadderXZDirs(pos: Vector3):
 func _on_button_button_down() -> void:
 	get_tree().reload_current_scene()
 	pass # Replace with function body.
+
+func win() -> void:
+	noInput = true
+	$WinScreen.visible = true
