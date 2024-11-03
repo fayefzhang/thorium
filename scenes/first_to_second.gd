@@ -22,4 +22,6 @@ func _process(delta: float) -> void:
 		stop()
 	if ($"../GameOver".visible):
 		stop()
+	if ($"../".hasBigKey):
+		stop()
 	pass

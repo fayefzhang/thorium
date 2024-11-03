@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		stop()
 	if ((keys == 0) && !has_stream_playback()):
 		play()
-	if (keys == -1):
+	if ($"../".hasBigKey):
 		stop()
 	if ($"../GameOver".visible):
 		stop()
