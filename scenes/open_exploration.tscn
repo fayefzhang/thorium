@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://brnkj70owa7vn" path="res://icon.svg" id="1_5kcvp"]
 [ext_resource type="PackedScene" uid="uid://ba2mruqdkid8v" path="res://scenes/characters/main_character.tscn" id="3_x1umk"]
-[ext_resource type="PackedScene" uid="uid://dep6lfycw6b38" path="res://scenes/key_hole.tscn" id="4_wpf6j"]
-[ext_resource type="PackedScene" uid="uid://d2epeasikvd3t" path="res://scenes/gear.tscn" id="5_6whhk"]
+[ext_resource type="PackedScene" uid="uid://dep6lfycw6b38" path="res://scenes/obstacles/key_hole.tscn" id="4_wpf6j"]
+[ext_resource type="PackedScene" path="res://scenes/gear.tscn" id="5_6whhk"]
 [ext_resource type="PackedScene" uid="uid://cdhbgse37l8c1" path="res://scenes/ladder_bottom.tscn" id="6_tdc7h"]
 [ext_resource type="PackedScene" uid="uid://bx5mx8k84fwq2" path="res://scenes/ladder_top.tscn" id="7_nbjvq"]
 [ext_resource type="PackedScene" uid="uid://24jbhtvpsodh" path="res://3d models/classroom.glb" id="8_7yx7i"]
+
 
 [sub_resource type="Environment" id="Environment_sv1ol"]
 
