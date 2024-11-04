@@ -42,3 +42,8 @@ func _on_body_entered(body: Node3D) -> void:
 		body.kill()
 		pause()
 	pass # Replace with function body.
+
+
+
+func _on_main_character_player_win() -> void:
+	pause()

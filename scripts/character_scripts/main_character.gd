@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 class_name main_character
 
+signal playerWin
+
 @export var character_name:String
 @export var texture:Texture2D
 var rotateTime: float = 0.3

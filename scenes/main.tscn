@@ -117,3 +117,4 @@ transform = Transform3D(4.99098, 0, 0, 0, 4.99098, 0, 0, 0, 4.99098, 0, -13.2244
 
 [connection signal="ready" from="Tube" to="Tube" method="_on_ready"]
 [connection signal="ready" from="Goop" to="Tube" method="_on_goop_ready"]
+[connection signal="playerWin" from="MainCharacter" to="Goop" method="_on_main_character_player_win"]
