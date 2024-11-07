@@ -33,10 +33,10 @@
 
 This project was developed in a 24 hour period for UPGRADE's Fall 2024 Game Jam.
 
-Programming: Robby, Faye, and Forest
-Art: Christina, Faye, and Forest
-Level Design: Faye, Christina, and Forest
-Music and sound: Forest
-Font: Nosifer
+- Programming: Robby, Faye, and Forest
+- Art: Christina, Faye, and Forest
+- Level Design: Faye, Christina, and Forest
+- Music and sound: Forest
+- Font: Nosifer
 
 Check out our other great game, Girlboss Gaslight Gatekeep! Coming in 2025.
