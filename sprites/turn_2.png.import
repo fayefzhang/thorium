@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjol0kd5xhyc8"
 path.s3tc="res://.godot/imported/turn_2.png-20b5f7d0f00fbeb24cc760628b91b8ea.s3tc.ctex"
+path.etc2="res://.godot/imported/turn_2.png-20b5f7d0f00fbeb24cc760628b91b8ea.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/turn_2.png"
-dest_files=["res://.godot/imported/turn_2.png-20b5f7d0f00fbeb24cc760628b91b8ea.s3tc.ctex"]
+dest_files=["res://.godot/imported/turn_2.png-20b5f7d0f00fbeb24cc760628b91b8ea.s3tc.ctex", "res://.godot/imported/turn_2.png-20b5f7d0f00fbeb24cc760628b91b8ea.etc2.ctex"]
 
 [params]
 

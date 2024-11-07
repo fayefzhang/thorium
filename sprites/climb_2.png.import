@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://rei24ph87ae7"
 path.s3tc="res://.godot/imported/climb_2.png-ceaf21183f60e9b21477a0dd5ef0e236.s3tc.ctex"
+path.etc2="res://.godot/imported/climb_2.png-ceaf21183f60e9b21477a0dd5ef0e236.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/climb_2.png"
-dest_files=["res://.godot/imported/climb_2.png-ceaf21183f60e9b21477a0dd5ef0e236.s3tc.ctex"]
+dest_files=["res://.godot/imported/climb_2.png-ceaf21183f60e9b21477a0dd5ef0e236.s3tc.ctex", "res://.godot/imported/climb_2.png-ceaf21183f60e9b21477a0dd5ef0e236.etc2.ctex"]
 
 [params]
 
