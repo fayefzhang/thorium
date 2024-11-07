@@ -65,3 +65,7 @@ interact={
 
 3d_physics/layer_2="interactionLayer"
 3d_physics/layer_3="LadderCeiling"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
